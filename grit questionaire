@@ -176,6 +176,11 @@ progress:  95
 --
 mandatory: True
 code:
-if user_is_credit_visible == True:
-    If
+def end_screen():
+    if credit_score < 550 or default_student_loan = True or user_is_bankrupt = True or user_is_in_debt = True:
+        print(lead_name, ", thank you for filling out this form! We will let you know when we launch and work with you to get qualified.")
+    else:
+        print(lead_name, ", Congratulations! You have been prequalified. We will connect you with bootcamps and funding when we launch. We will be in touch with more information.")
+
+end_screen()
 progress:  100
