@@ -1,0 +1,181 @@
+features:
+  progress bar: True
+
+--
+mandatory: True
+question: 
+  What is your name?
+fields: 
+  -  Name: lead_name
+progress:  7
+--
+mandatory: True
+question: 
+  Enter your email address
+fields: 
+  -  Email: email_address
+     datatype: Email
+     required: True
+progress:  14
+--
+mandatory: True
+question: 
+  Enter your phone number?
+fields: 
+  -  Phone number: phone_number
+progress:  21
+--
+mandatory: True
+question: 
+  Where are you located?
+fields: 
+  -  State:  state
+     input type: dropdown
+     choices:  
+        -  Alabama
+        -  Alaska
+        -  Arizona
+        -  Arkansas
+        -  California
+        -  Colorado
+        -  Connecticut
+        -  Delaware
+        -  Florida
+        -  Georgia
+        -  Hawaii
+        -  Idaho
+        -  Illinois
+      -  Indiana
+      -  Iowa
+      -  Kansas
+      -  Kentucky
+      -  Louisiana
+      -  Maine
+      -  Maryland
+      -  Massachusetts
+      -  Michigan
+      -  Minnesota
+      -  Mississippi
+      -  Missouri
+      -  Montana
+      -  Nebraska
+      -  Nevada
+      -  New Hampshire
+      -  New Jersey
+      -  New Mexico
+      -  New York
+      -  North Carolina
+      -  North Dakota
+       -   Ohio
+       -   Oklahoma
+       -   Oregon
+       -   Pennsylvania
+       -   Rhode Island
+       -   South Carolina
+       -   South Dakota
+       -   Tennessee
+       -   Texas
+       -   Utah
+       -   Vermont
+       -   Virginia
+       -   Washington
+       -   West Virginia
+       -  Wisconsin
+       -   Wyoming
+ 
+  - City:  city
+progress:  28
+--
+mandatory: True
+question:  
+  Bootcamps cost between $15k to $25k. Do you have the ability to:
+fields:
+    -  “Check the option(s) that apply to you”: can_afford
+        datatype: checkboxes
+        choices: 
+pay cash
+obtain a loan
+progress:  35
+
+--
+mandatory:  True
+question: 
+  Are you credit-visible?
+subquestion:  Have you built a credit score by taking out credit cards or loans?
+yesno:  user_is_credit_visible
+progress:  42
+
+--
+mandatory:  True
+question: 
+  What is your credit score?
+fields:
+  -  Credit score:  credit_score
+      datatype:  integer
+progress:  49
+
+--
+mandatory:  True
+question: 
+  Do you have any student loans?
+buttons:
+   -  Yes:  
+         question:  Were any payments late or in default?
+         yesno: default_student_loan
+   -  No:  student_loan
+progress:  56
+
+--
+mandatory:  True
+question: 
+   Do you have any bankruptcies?
+yesno: user_is_bankrupt
+progress:  63
+
+--
+mandatory:  True
+question: 
+  Do you have non-mortgage debt commitments over 1800?
+yesno: user_is_in_debt
+progress:  70
+
+--
+mandatory:  True
+question: 
+  Do you have collections and non-amortizing trades balances < $10K?
+yesno: user_has_trade_balance
+progress:  77
+
+--
+mandatory: True
+question: 
+  What do you want to study?
+fields: 
+  -  Course: field_of_study
+progress:  84
+
+--
+mandatory: True
+question: 
+  When could you join a coding bootcamp?
+field:  availability
+choices:  
+  -  3 months
+  -  6 months
+  -  12 months
+progress:  91
+
+--
+mandatory: True
+question: 
+  How did you find us?
+fields: 
+  -  Source: lead_source
+progress:  95
+
+--
+mandatory: True
+code:
+if user_is_credit_visible == True:
+    If
+progress:  100
